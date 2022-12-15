@@ -11,7 +11,7 @@ const ProfessionalDashboard = () => {
     }, [1])
 
     const getSections = async () => {
-        await axios.get('http://localhost:4000/section/allsections').then((response) => {
+        await axios.get('https://amsserver.herokuapp.com/section/allsections').then((response) => {
             if (response.status === 200) {
                 updateSections(response.data)
             }

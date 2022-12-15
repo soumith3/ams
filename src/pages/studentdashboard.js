@@ -13,8 +13,8 @@ const StudentDashboard = () => {
 
     const getSectionsAndAttendances = async () => {
         const apiRequests = []
-        const Section = await axios.get('http://localhost:4000/section/allsections')
-        const Attendance = await axios.get('http://localhost:4000/attendance/fetchallattendances')
+        const Section = await axios.get('https://amsserver.herokuapp.com/section/allsections')
+        const Attendance = await axios.get('https://amsserver.herokuapp.com/attendance/fetchallattendances')
         apiRequests.push(Section)
         apiRequests.push(Attendance)
         Promise.all(apiRequests).then((response) => {

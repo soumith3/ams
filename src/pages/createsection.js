@@ -42,7 +42,7 @@ const CreateSection = () => {
     }, [1])
 
     const GetUsers = async () => {
-        await axios.get('http://localhost:4000/user/allusers').then((response) => {
+        await axios.get('https://amsserver.herokuapp.com/user/allusers').then((response) => {
             if (response.status === 200) {
                 const users = response.data
                 updateProfessors(users.filter((user) => user.UserType === 'PROFESSOR'))
@@ -88,7 +88,7 @@ const CreateSection = () => {
             Students: students.filter((studentInfo) => selectedkeys.includes(studentInfo._id))
         }
 
-        await axios.post('http://localhost:4000/section/addnewsection', userdetails).then((response) => {
+        await axios.post('https://amsserver.herokuapp.com/section/addnewsection', userdetails).then((response) => {
             if (response.status === 201) {
                 if (response.data) {
                     toast.success('Section Created Successfully !!!');

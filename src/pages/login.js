@@ -42,7 +42,7 @@ const Login = () => {
     }
 
     const loginUser = async (user) => {
-        await axios.post('http://localhost:4000/user/login', user).then((response) => {
+        await axios.post('https://amsserver.herokuapp.com/user/login', user).then((response) => {
             if (response.status === 200) {
                 if (response.data) {
                     toast.error('User Logged In Successfully !!!');

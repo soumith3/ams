@@ -64,7 +64,7 @@ const SignUp = () => {
     }
 
     const addNewUser = async (newuser) => {
-        await axios.post('http://localhost:4000/user/register', newuser).then((response) => {
+        await axios.post('https://amsserver.herokuapp.com/user/register', newuser).then((response) => {
             if (response.status === 201) {
                 toast.success('User Created Successfully !!!');
                 setTimeout(() => { window.location.href = '/login' }, 2000)

@@ -53,7 +53,7 @@ const CreateAttendance = () => {
                 studentId: rowid,
                 attendanceDate: moment(attendanceDate).format('YYYY-MM-DD')
             }
-            await axios.post('http://localhost:4000/attendance/addnewattendance', attendance).then((response) => {
+            await axios.post('https://amsserver.herokuapp.com/attendance/addnewattendance', attendance).then((response) => {
                 if (response.status === 200) {
                     toast.success('Attendance marked successfully !!')
                 }
@@ -67,7 +67,7 @@ const CreateAttendance = () => {
     }, [1])
 
     const getSections = async (sectionid) => {
-        await axios.get('http://localhost:4000/section/allsections').then((response) => {
+        await axios.get('https://amsserver.herokuapp.com/section/allsections').then((response) => {
             if (response.status === 200) {
                 const sections = response.data
                 const section = sections.find((section) => section._id === sectionid)
